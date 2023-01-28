@@ -1,0 +1,25 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  counter-svc
+spec:
+  selector:
+    app:  counter
+  type:  ClusterIP
+  ports:
+  - name:  counter-port
+    port:  8080
+    targetPort:  8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  metrics-svc
+spec:
+  selector:
+    app:  counter
+  type:  ClusterIP
+  ports:
+  - name:  metrics-port
+    port:  9201
+    targetPort:  9201
