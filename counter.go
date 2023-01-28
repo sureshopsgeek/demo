@@ -74,8 +74,8 @@ func startServer(port int, mux *http.ServeMux) {
 }
 
 func main() {
-	flag.IntVar(&counterPort, "cp", 8080, "port in which counter will listen")
-	flag.IntVar(&promPort, "pp", 9201, "port in which prometheus metrics will be exposed")
+	flag.IntVar(&counterPort, "cp", 8080, "counter server port")
+	flag.IntVar(&promPort, "mp", 9201, "metrics server port")
 	flag.BoolVar(&verbose, "v", false, "set to enable verbose logging")
 	flag.Parse()
 	reg := prometheus.NewRegistry()
